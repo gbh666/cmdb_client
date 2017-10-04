@@ -1,0 +1,14 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+# __author__ = "Sam"
+# Date: 2017/9/25
+
+import subprocess
+import requests
+
+result = subprocess.getoutput('ipconfig')
+message = result[:]
+
+api = "http://127.0.0.1:8000/api/server.html"
+
+requests.post(url=api,data={"k1":message})
